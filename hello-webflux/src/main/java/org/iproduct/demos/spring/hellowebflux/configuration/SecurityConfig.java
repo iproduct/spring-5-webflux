@@ -9,7 +9,6 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.server.SecurityWebFilterChain;
-import reactor.core.publisher.Flux;
 
 @Configuration("org.iproduct.demos.spring.hellowebflux")
 @EnableWebFluxSecurity
@@ -21,7 +20,7 @@ public class SecurityConfig {
             .authorizeExchange()
                 .pathMatchers(HttpMethod.GET, "/api/users").permitAll()
                 .pathMatchers(HttpMethod.POST, "/api/users/**").permitAll()
-                .pathMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/api/users/**").hasAuthority("ADMIN") //authenticated()
                 //.pathMatchers("/api/users/{user}/**").access(this::currentUserMatchesPath)
                 .anyExchange().permitAll()
             .and()
@@ -43,7 +42,7 @@ public class SecurityConfig {
     @Bean
     public ReactiveUserDetailsService userDetailsRepository(UserRepository users) {
         return (username) ->
-            Flux.fromIterable(users.findByUsername(username)).next().cast(UserDetails.class);
+            users.findOneByUsername(username).cast(UserDetails.class);  // Flux.fromIterable(users.findByUsername(username)).next().cast(UserDetails.class);
     }
 
 }

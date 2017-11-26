@@ -15,12 +15,13 @@ import java.util.Collection;
 //import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
-@JsonIgnoreProperties(value = {"authorities"})
+@JsonIgnoreProperties(value = {"password", "authorities", "name",
+        "accountNonExpired", "accountNonLocked", "credentialsNonExpired", "enabled"})
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"id", "username"})
+@EqualsAndHashCode(of = {"id"})
 @ToString
 @Builder
 public class User implements UserDetails {
@@ -45,10 +46,8 @@ public class User implements UserDetails {
     private String lname;
 
     @NotNull
-    @Builder.Default
     private Role role = Role.CUSTOMER;
 
-    @Builder.Default
     private boolean active = true;
 
 //    @Override
@@ -61,7 +60,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.createAuthorityList(getRole()!= null ? getRole().toString() : Role.CUSTOMER.toString());
+        return AuthorityUtils.createAuthorityList(getRole() != null ? getRole().toString() : Role.CUSTOMER.toString());
     }
 
     @Override

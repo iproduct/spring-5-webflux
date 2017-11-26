@@ -50,7 +50,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 //	compile('org.springframework.boot:spring-boot-starter-websocket')
 	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-//	compile("com.h2database:h2")
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+//	compile("com.h2database:h2")</groupId>
 	compile ('org.slf4j:jcl-over-slf4j')
 	compile ('ch.qos.logback:logback-classic')
 	runtime('org.springframework.boot:spring-boot-devtools')

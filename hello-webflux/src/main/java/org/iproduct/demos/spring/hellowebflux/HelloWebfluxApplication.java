@@ -20,11 +20,13 @@ public class HelloWebfluxApplication {
     @Bean
     public RouterFunction<ServerResponse> routes(UserHandler userHandler) {
         return RouterFunctions.nest(RequestPredicates.path("/api/users"),
-            RouterFunctions
-                .route(GET(""), userHandler::findAllUsers)
-                .andRoute(POST("").and(contentType(APPLICATION_JSON)), userHandler::createUser)
+                RouterFunctions
+                        .route(GET(""), userHandler::findAllUsers)
+                        .andRoute(GET("/{id}"), userHandler::findUser)
+                        .andRoute(POST("").and(contentType(APPLICATION_JSON)), userHandler::createUser)
+                        .andRoute(PUT("/{id}").and(contentType(APPLICATION_JSON)), userHandler::editUser)
+                        .andRoute(DELETE("/{id}"), userHandler::deleteUser)
         );
-//                .andRoute(GET("/posts/{id}"), postHandler::get);
     }
 
     public static void main(String[] args) {
