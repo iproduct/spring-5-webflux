@@ -1,0 +1,2 @@
+[{ "username" : "admin", "password" : "{bcrypt}$2a$10$6mP4276hKh.PMVPdZEPcwelWa0tK7kWA7iXuq7xjgu8uJ8KmYGDfK", "fname" : "Default", "lname" : "Admin", "role" : 3, "active" :
+true, "_class" : "org.iproduct.demos.spring.hellowebflux.domain.User" }]
