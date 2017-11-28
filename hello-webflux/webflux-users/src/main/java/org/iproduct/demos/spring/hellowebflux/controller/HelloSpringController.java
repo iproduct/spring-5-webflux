@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-@RestController("/hello")
+@RestController
 public class HelloSpringController {
 
     private static final String template = "Hello, %s!";
@@ -16,7 +16,7 @@ public class HelloSpringController {
 //        return "Hello World!";
 //    }
 
-    @GetMapping
+    @GetMapping("/hello")
     public @ResponseBody
     Hello sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name) {
         return new Hello(counter.incrementAndGet(), String.format(template, name));
