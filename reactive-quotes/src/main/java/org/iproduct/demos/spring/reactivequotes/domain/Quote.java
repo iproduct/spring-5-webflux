@@ -15,7 +15,6 @@ import java.time.Instant;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 @ToString
-@Builder
 public class Quote {
 
     private static long nextId = 0;
