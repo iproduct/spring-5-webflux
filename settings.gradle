@@ -1,4 +1,4 @@
-include 'reactive-quotes'
 include 'webflux-users'
-include 'quotes-demo-app'
+include 'webflux-users-stopper'
+include 'reactive-quotes'
 

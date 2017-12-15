@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.M6'
+		springBootVersion = '2.0.0.M7'
 	}
 	repositories {
 		mavenCentral()
@@ -15,9 +15,9 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
-//apply plugin: 'application'
-//apply plugin: 'org.springframework.boot'
-//apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 idea {
     module {
@@ -28,7 +28,7 @@ idea {
 group = 'org.iproduct.demos.spring'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
-//mainClassName = 'org.iproduct.demos.spring.hellowebflux.HelloWebfluxApplication'
+mainClassName = 'org.iproduct.demos.spring.client.StopApplication'
 
 repositories {
 	mavenCentral()
@@ -61,4 +61,5 @@ dependencies {
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 	testCompile('org.springframework.security:spring-security-test')
 }
+
 
