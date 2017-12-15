@@ -55,7 +55,7 @@ dependencies {
 	compile ('ch.qos.logback:logback-classic')
 	runtime('org.springframework.boot:spring-boot-devtools')
 //	runtime('org.postgresql:postgresql')
-	compileOnly('org.projectlombok:lombok')
+	compile('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
