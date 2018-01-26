@@ -33,7 +33,7 @@ public class HelloWebfluxApplicationTests {
         client = WebTestClient.bindToApplicationContext(context).build();
         client
                 .mutate()
-                .filter(rootCredentials())
+                .filter(adminCredentials())
                 .build()
                 .post()
                 .uri("/api/users")
@@ -55,7 +55,7 @@ public class HelloWebfluxApplicationTests {
     public void cleanUpAfterClass() {
         client
                 .mutate()
-                .filter(rootCredentials())
+                .filter(adminCredentials())
                 .build()
                 .delete()
                 .uri("/api/users/" + createdCustomer.getId())
@@ -67,7 +67,7 @@ public class HelloWebfluxApplicationTests {
     }
 
     @Test
-    public void basicRequired() throws Exception {
+    public void whenUnauthenticatedGetUsersShouldFail() throws Exception {
         client
                 .get()
                 .uri("/api/users")
@@ -76,13 +76,13 @@ public class HelloWebfluxApplicationTests {
     }
 
     @Test
-    public void basicWorks() throws Exception {
+    public void whenAdminCredentialsGetUsersShouldSucceed() throws Exception {
         client
                 .mutate()
-                .filter(rootCredentials())
+                .filter(adminCredentials())
                 .build()
                 .get()
-                .uri("/users")
+                .uri("/api/users")
                 .exchange()
                 .expectStatus().isOk();
     }

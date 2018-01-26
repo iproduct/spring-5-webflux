@@ -13,7 +13,6 @@ import org.iproduct.demos.spring.hellowebflux.repository.UserRepository;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -46,13 +45,13 @@ public class MongoConfiguration extends AbstractReactiveMongoConfiguration imple
     @Value("${mongo.server.selection.timeout.ms:15000}")
     private long serverSelectionTimeout;
 
-    @Value("${mongo.dbpath:\"/data/db\"}")
+    @Value("${mongo.dbpath:c:\\mongo-data}")
     private String mongoDbPath;
 
-    @Value("${mongo.connection.string:\"mongodb://localhost\"}")
+    @Value("${mongo.connection.string:mongodb://localhost}")
     private String mongodbConnectionString;
 
-    @Value("${mongo.db.name:\"users\"}")
+    @Value("${mongo.db.name:users}")
     private String mongodbDbName;
 
     @Autowired
@@ -122,7 +121,6 @@ public class MongoConfiguration extends AbstractReactiveMongoConfiguration imple
                 runMongo.destroy();
             }
             log.info("Exiting the application.");
-            System.exit(SpringApplication.exit(applicationContext));
     }
 
 
