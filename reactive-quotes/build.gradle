@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.M6'
+		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
 	}
 	repositories {
 		mavenCentral()
@@ -28,6 +28,31 @@ group = 'org.iproduct.demos.spring'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+//moduleName = 'org.iproduct.demos.spring.reactivequotes'
+//
+//compileJava {
+//	inputs.property("moduleName", moduleName)
+//	doFirst {
+//		options.compilerArgs = [
+//				'--module-path', classpath.asPath,
+//		]
+//		classpath = files()
+//	}
+//}
+//
+//mainClassName = "$moduleName/org.iproduct.demos.spring.reactivequotes.ReactiveQuotesServiceApp"
+//
+//run {
+//	inputs.property("moduleName", moduleName)
+//	doFirst {
+//		jvmArgs = [
+//				'--module-path', classpath.asPath,
+//				'--module', mainClassName
+//		]
+//		classpath = files()
+//	}
+//}
+
 repositories {
 	mavenCentral()
 	maven { url "https://repo.spring.io/snapshot" }
@@ -42,12 +67,12 @@ configurations.all {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 //	compile('org.springframework.boot:spring-boot-starter-websocket')
-	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+//	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+//	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
 	compile ('org.slf4j:jcl-over-slf4j')
-	compile ('ch.qos.logback:logback-classic')
+//	compile ('ch.qos.logback:logback-classic')
 	runtime('org.springframework.boot:spring-boot-devtools')
-	compileOnly('org.projectlombok:lombok')
+//	compile('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')

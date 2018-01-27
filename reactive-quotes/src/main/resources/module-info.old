@@ -1,0 +1,12 @@
+open module org.gradle.actors {
+    exports org.iproduct.demos.spring.reactivequotes;
+    requires reactor.core;
+    requires spring.boot.autoconfigure;
+    requires spring.webflux;
+    requires spring.context;
+    requires spring.web;
+    requires spring.boot;
+    requires spring.beans;
+    requires java.validation;
+    requires java.sql;
+}

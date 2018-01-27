@@ -1,6 +1,5 @@
 package org.iproduct.demos.spring.reactivequotes.handlers;
 
-import lombok.extern.slf4j.Slf4j;
 import org.iproduct.demos.spring.reactivequotes.domain.Quote;
 import org.iproduct.demos.spring.reactivequotes.services.QuotesGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
 import static org.springframework.http.MediaType.TEXT_EVENT_STREAM;
 
 @Component
-@Slf4j
 public class ReactiveQuotesHandler {
 
     @Autowired

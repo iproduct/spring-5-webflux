@@ -1,5 +1,6 @@
 package org.iproduct.demos.spring.reactivequotes;
 
+import org.iproduct.demos.spring.reactivequotes.handlers.ReactiveProfilerHandler;
 import org.iproduct.demos.spring.reactivequotes.handlers.ReactiveQuotesHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
@@ -19,9 +21,12 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class ReactiveQuotesServiceApp {
 
     @Bean
-    public RouterFunction<ServerResponse> routes(ReactiveQuotesHandler qoutesHandler) {
+    public RouterFunction<ServerResponse> routes(ReactiveProfilerHandler profilerHandler, ReactiveQuotesHandler qoutesHandler) {
 
-        return route(GET("/api/quotes").and(accept(APPLICATION_STREAM_JSON)), qoutesHandler::streamQuotes)
+        return route(GET("/api/processes").and(accept(APPLICATION_JSON)), profilerHandler::getProcesses)
+                .andRoute(GET("/api/cpu").and(accept(APPLICATION_STREAM_JSON)), profilerHandler::streamCpu)
+                .andRoute(GET("/api/cpu").and(accept(MediaType.TEXT_EVENT_STREAM)), profilerHandler::streamCpuSSE)
+                .andRoute(GET("/api/quotes").and(accept(APPLICATION_STREAM_JSON)), qoutesHandler::streamQuotes)
                 .andRoute(GET("/api/quotes").and(accept(MediaType.TEXT_EVENT_STREAM)), qoutesHandler::streamQuotesSSE);
 
     }
