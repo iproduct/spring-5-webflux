@@ -1,10 +1,10 @@
 # Reactive Microservices with Spring 5 WebFlux
 
-**WebFlux functional reactive services demo presented by [IPT-Intellectual Products & Technologies @DEV.BG](http://iproduct.org/en/spring-5-webflux/)**
+**WebFlux functional reactive services demo presented by [IPT-Intellectual Products & Technologies @jProfessionals '2018 (http://iproduct.org/en/presentation-winter-edition-2018-jprofessionals/)**
 
 This is a demo application, which shows how to develop functional reactive (micro-)services using Spring 5 WebFlux, Spring Boot 2.0, Spring Data reactive repositories, MongoDB, reactive Spring Security and more.
 
-You can find links to the presentation in [this post](http://iproduct.org/en/reactive-microservices-spring-webflux/).
+You can find links to the presentation in [this post](https://www.slideshare.net/Trayan_Iliev/microservices-with-spring-5-webflux-jprofessionals-2018).
 
 ## Whats new in Spring 5
 
