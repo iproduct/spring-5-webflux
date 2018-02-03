@@ -35,7 +35,7 @@ Method	| Path	| Description	| JSON | SSE Streaming
 ------------- | ------------------------- | ------------- |:-------------:|:-------------:|
 GET	| /api/processes	| List all currently running Java processes	   |  	*  |  
 SSE	| /api/cpu	| Get realtime stream of CPU consumption for all Java processes |   * |  *
-SSE	| /api/quotes	| Get fictional option quote prices in realtime  |   * |  *
+SSE	| /api/quotes	| Get fictional options quote prices in realtime  |   * |  *
 
 
 ### webflux-users (requires Java 8)
