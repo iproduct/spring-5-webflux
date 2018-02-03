@@ -92,10 +92,6 @@
 			//	y : datapoint.price
 			//}, true, chart.series[index].data.length >= 50);
 
-			// request new processes info if processes have changed
-			if (datapoint.changed) {
-				updateProcesses();
-			}
 		};
 
 		eventSource.addEventListener('open', function(e) {
@@ -104,20 +100,6 @@
 		
 		$('#content').bind('unload', function() {
 			eventSource.close();
-		});
-
-	    updateProcesses();
-	}
-
-	function updateProcesses() {
-		$.getJSON(api + "symbols")
-			.done(function(data) {
-				var items = [];
-				$.each(data, function(key, info) {
-					items.push("<li id='" + key + "'><span class='pid'>PID: " + info.pid
-						+ "</span> - <span class='command'>" + info.command + "</span></li>");
-			    });
-				$("#processes").html(items.join(""));
 		});
 	}
 </script>

@@ -37,7 +37,7 @@
 
             var serie = chart.series.find(serie => serie.name == datapoint.pid);
             if(serie) {
-                var shift = serie.data.length > 40;
+                var shift = serie.data.length > 30;
                 serie.addPoint([datapoint.instant, datapoint.load], true, shift);
             }
 
@@ -79,7 +79,7 @@
 					if(existing) {
 					    existingData = existing.data.map( point => ({x: point.x, y: point.y}));
 					}
-					console.log(existingData);
+//					console.log(existingData);
                     series.push( { name: info.pid, data: existingData } );
 			    });
 			    chart.update({series: series}, true, true);
