@@ -56,5 +56,5 @@ Method	| Path	| Description	| Requires authentication | Admin only
 GET	| /api/users	| List all users	          |  	*  |  
 GET	| /api/users/{userId}	| Get current account statistics	|    |  
 POST	| /api/users	| Create new user	|  *  |  
-PUT	| /api/users/{userId}	| Create or update time series datapoint for specified account	|  *  |  
-DELETE | /api/users/{userId}	| Create or update time series datapoint for specified account	|  *  |  * 
+PUT	| /api/users/{userId}	| Update user data	|  *  |  
+DELETE | /api/users/{userId}	| Delete existing user	|  *  |  * 
