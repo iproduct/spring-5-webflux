@@ -14,7 +14,7 @@ All demos are using Gradle for building.
 
 1. Be sure to configure `JAVA_HOME` environment variable to point to JDK 9, and `PATH` to include `bin` sub-folder of JDK 9 (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-9-oracle]` to choose the java 9.
 1. Build and run the Gradle application (`reactive-streaming-demos` module) - e.g. run `gradle bootRun` from the `reactive-streaming-demos` folder. The application main class is `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
-3. Open [http://localhost:9000/](http://localhost:9000/) for Java Processes CPU Profiling demo (using Java 9 Process API -  `ProcessHandle` and `ProcessInfo` classes), and [http://localhost:9000/quotes.html](http://localhost:9000/quotes.html) for Reactive Option Quotes demo respectively in your browser.
+3. Open [http://localhost:9000/](http://localhost:9000/) for Java Processes CPU Profiling demo (using novelties in Java 9 Process API:  `ProcessHandle` and `ProcessInfo` classes), and [http://localhost:9000/quotes.html](http://localhost:9000/quotes.html) for Reactive Option Quotes demo respectively in your browser.
 
 ## Whats new in Spring 5
 
