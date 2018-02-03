@@ -13,8 +13,17 @@ All demos are using Gradle for building.
 ## reactive-streaming-demos (requires Java 9)
 
 1. Be sure to configure `JAVA_HOME` environment variable to point to JDK 9, and `PATH` to include `bin` sub-folder of JDK 9 (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-9-oracle]` to choose the java 9.
-1. Build and run the Gradle application (`reactive-streaming-demos` module) - e.g. run `gradle bootRun` from the `reactive-streaming-demos` folder. The application main class is `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
+2. Build and run the Spring Boot-Gradle application (`reactive-streaming-demos` module) - e.g. run `gradle bootRun` from the `reactive-streaming-demos` folder. The application main class is `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
 3. Open [http://localhost:9000/](http://localhost:9000/) for Java Processes CPU Profiling demo (using novelties in Java 9 Process API:  `ProcessHandle` and `ProcessInfo` classes), and [http://localhost:9000/quotes.html](http://localhost:9000/quotes.html) for Reactive Option Quotes demo respectively in your browser.
+
+## webflux-users (requires Java 8)
+
+1. Be sure to configure `JAVA_HOME` environment variable to point to **JDK 8**, and `PATH` to include `bin` sub-folder of **JDK 8** (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-8-oracle]` to choose the **java 8**.
+2. Install (if not already installed) latest version of MongoDB, create <local_database_folder>, and start MongoDB - e.g. run `mongod --dbpath="<local_database_folder>"`.
+3. Build and run the Spring Boot-Gradle application (`webflux-users` module) - e.g. run `gradle bootRun` from the `webflux-users` folder. The application main class is `org.iproduct.demos.spring.manageusers.WebfluxUsersApplication`.
+3. Open [http://localhost:8080/api/users](http://localhost:8080/api/users) in your browser - you should be asked to login using BASIC authencication with default admin cedentials - user: admin, password: admin.
+You should see something like: 
+`[{"id":"","username":"admin","fname":"Default","lname":"Admin","role":"ADMIN","active":true}]`
 
 ## Whats new in Spring 5
 
