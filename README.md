@@ -6,7 +6,7 @@ This is a demo application, which shows how to develop functional reactive (micr
 
 You can find links to the presentation in [this post](https://www.slideshare.net/Trayan_Iliev/microservices-with-spring-5-webflux-jprofessionals).
 
-All demos are using Gradle for building.
+All demos use Gradle for building.
 
 ## Whats new in Spring 5
 
