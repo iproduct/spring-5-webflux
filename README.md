@@ -22,10 +22,7 @@ All demos are using Gradle for building.
 2. Install (if not already installed) latest version of MongoDB, create <local_database_folder>, and start MongoDB - e.g. run `mongod --dbpath="<local_database_folder>"`.
 3. Build and run the Spring Boot-Gradle application (`webflux-users` module) - e.g. run `gradle bootRun` from the `webflux-users` folder. The application main class is `org.iproduct.demos.spring.manageusers.WebfluxUsersApplication`.
 4. Open [http://localhost:8080/api/users](http://localhost:8080/api/users) in your browser - you should be asked to login using BASIC authentication with default admin cedentials - **user: admin, password: admin**. You should see something like: 
-`[{"id":"","username":"admin","fname":"Default","lname":"Admin","role":"ADMIN","active":true}]`
-
-You could use a REST client such as `Postman` or `curl` to read, create, update and delete users following the standard REST API conventions.
-
+`[{"id":"","username":"admin","fname":"Default","lname":"Admin","role":"ADMIN","active":true}]`. You could use a REST client such as `Postman` or `curl` to read, create, update and delete users following the standard REST API conventions.
 5. Run the unit tests (does not require server to be started) with: `gradle clean test` or `gradle clean test --info`
 
 ## Whats new in Spring 5
