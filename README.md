@@ -51,7 +51,7 @@ SSE	| /api/quotes	| Get fictional options quote prices in realtime  |   * |  *
 #### Users service
 Provides CRUD operations for the **Users**:
 
-Method	| Path	| Description	| User authenticated | Admin only
+Method	| Path	| Description	| Requires authentication | Admin only
 ------------- | ------------------------- | ------------- |:-------------:|:-------------:|
 GET	| /api/users	| List all users	          |  	*  |  
 GET	| /api/users/{userId}	| Get current account statistics	|    |  
