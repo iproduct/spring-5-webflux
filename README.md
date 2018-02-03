@@ -6,6 +6,12 @@ This is a demo application, which shows how to develop functional reactive (micr
 
 You can find links to the presentation in [this post](https://www.slideshare.net/Trayan_Iliev/microservices-with-spring-5-webflux-jprofessionals).
 
+## How to run the demos
+
+## reactive-streaming-demos
+
+
+
 ## Whats new in Spring 5
 
 Spring 5 adds a plenty of new features. Following are my favourits:
