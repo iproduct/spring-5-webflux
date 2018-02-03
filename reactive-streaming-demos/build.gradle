@@ -65,6 +65,7 @@ configurations.all {
 }
 
 dependencies {
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 //	compile('org.springframework.boot:spring-boot-starter-websocket')
 //	compile("org.springframework.boot:spring-boot-starter-data-mongodb")

@@ -18,7 +18,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @SpringBootApplication
 @EnableWebFlux
-public class ReactiveQuotesServiceApp {
+public class ReactiveStreamingDemosApp {
 
     @Bean
     public RouterFunction<ServerResponse> routes(ReactiveProfilerHandler profilerHandler, ReactiveQuotesHandler qoutesHandler) {
@@ -32,7 +32,7 @@ public class ReactiveQuotesServiceApp {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(ReactiveQuotesServiceApp.class, args);
+        SpringApplication.run(ReactiveStreamingDemosApp.class, args);
     }
 
 }
