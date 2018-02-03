@@ -41,7 +41,7 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 Provides CRUD operations for the users:
 
 Method	| Path	| Description	| User authenticated | Admin only
-------------- | -------------------------------------------------------------------------- | ------------- |:-------------:|:-------------:|
+------------- | ------------------------- | ------------- |:-------------:|:-------------:|
 GET	| /api/users	| List all users	          |  	*  |  
 GET	| /api/users/{userId}	| Get current account statistics	|    |  
 POST	| /api/users	| Create new user	|  *  |  
