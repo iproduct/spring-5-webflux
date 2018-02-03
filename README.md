@@ -10,7 +10,8 @@ You can find links to the presentation in [this post](https://www.slideshare.net
 
 ## reactive-streaming-demos
 
-
+# Run the main application class `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
+# Open `http://localhost:9000/` in your browser.
 
 ## Whats new in Spring 5
 
