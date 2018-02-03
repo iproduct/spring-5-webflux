@@ -29,13 +29,13 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 
 
 #### Streaming demo REST and SSE endpoints
-Provides information about runiiing Java processes and streaming data about their CPU ussage. Second demo provides streaming data about **fictional** options quote prices. **All data is purely fictional - NO real stock prices are quoteed :)**:
+Provides information about runiiing Java processes and streaming data about their CPU ussage. Second demo provides streaming data about **fictional** options quote prices. **All data is purely fictional - NO real stock prices are quoted :)**:
 
 Method	| Path	| Description	| JSON | SSE Streaming
 ------------- | ------------------------- | ------------- |:-------------:|:-------------:|
 GET	| /api/processes	| List all currently running Java processes	   |  	*  |  
 SSE	| /api/cpu	| Get realtime stream of CPU consumption for all Java processes |   * |  *
-SSE	| /api/quotes	| Get realtime stream of CPU consumption for all Java processes |   * |  *
+SSE	| /api/quotes	| Get fictional option quote prices in realtime  |   * |  *
 
 
 ### webflux-users (requires Java 8)
