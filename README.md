@@ -11,6 +11,8 @@ You can find links to the presentation in [this post](https://www.slideshare.net
 Spring 5 adds a plenty of new features. Following are my favourits:
 - Reactive Programming Model
 - Spring Web Flux
+-
 - Reactive DB repositories & integrations + hot event streaming: MongoDB, CouchDB, Redis, Cassandra, Kafka
-- Testing improvements
+- Testing improvements – WebTestClient (based on reactive WebFlux WebClient)
+- JDK 8+ and Java EE 7+ baseline - see the 'reactive quotes' demo for Java 9 example
 - Kotlin functional DSL
