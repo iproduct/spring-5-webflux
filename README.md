@@ -20,13 +20,13 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 
 ## How to run the demos
 
-## reactive-streaming-demos (requires Java 9)
+### reactive-streaming-demos (requires Java 9)
 
 1. Be sure to configure `JAVA_HOME` environment variable to point to JDK 9, and `PATH` to include `bin` sub-folder of JDK 9 (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-9-oracle]` to choose the java 9.
 2. Build and run the Spring Boot-Gradle application (`reactive-streaming-demos` module) - e.g. run `gradle bootRun` from the `reactive-streaming-demos` folder. The application main class is `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
 3. Open [http://localhost:9000/](http://localhost:9000/) for Java Processes CPU Profiling demo (using novelties in Java 9 Process API:  `ProcessHandle` and `ProcessInfo` classes), and [http://localhost:9000/quotes.html](http://localhost:9000/quotes.html) for Reactive Option Quotes demo respectively in your browser.
 
-## webflux-users (requires Java 8)
+### webflux-users (requires Java 8)
 
 1. Be sure to configure `JAVA_HOME` environment variable to point to **JDK 8**, and `PATH` to include `bin` sub-folder of **JDK 8** (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-8-oracle]` to choose the **java 8**.
 2. Install (if not already installed) latest version of MongoDB, create <local_database_folder>, and start MongoDB - e.g. run `mongod --dbpath="<local_database_folder>"`.
