@@ -36,3 +36,14 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 `[{"id":"","username":"admin","fname":"Default","lname":"Admin","role":"ADMIN","active":true}]`. You could use a REST client such as `Postman` or `curl` to read, create, update and delete users following the standard REST API conventions.
 5. Run the unit tests (does not require server to be started) with: `gradle clean test` or `gradle clean test --info`
 
+
+#### Users service
+Provides CRUD operations for users.
+
+Method	| Path	| Description	| User authenticated	
+------------- | ------------------------- | ------------- |:-------------:|
+GET	| /statistics/{account}	| Get specified account statistics	          |  	
+GET	| /statistics/current	| Get current account statistics	| × 
+POST	| /statistics/demo	| Get demo account statistics	|   
+PUT	| /statistics/{account}	| Create or update time series datapoint for specified account	|  
+DELETE | /statistics/{account}	| Create or update time series datapoint for specified account	|  
