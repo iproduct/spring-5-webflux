@@ -8,6 +8,16 @@ You can find links to the presentation in [this post](https://www.slideshare.net
 
 All demos are using Gradle for building.
 
+## Whats new in Spring 5
+
+Spring 5 adds a plenty of new features. Following are my favourits:
+- Reactive Programming Model
+- Spring Web Flux
+- Reactive DB repositories & integrations + hot event streaming: MongoDB, CouchDB, Redis, Cassandra, Kafka
+- Testing improvements – WebTestClient (based on reactive WebFlux WebClient)
+- JDK 8+ and Java EE 7+ baseline - see the `reactive-quotes` demo for Java 9 example
+- Kotlin functional DSL
+
 ## How to run the demos
 
 ## reactive-streaming-demos (requires Java 9)
@@ -25,12 +35,3 @@ All demos are using Gradle for building.
 `[{"id":"","username":"admin","fname":"Default","lname":"Admin","role":"ADMIN","active":true}]`. You could use a REST client such as `Postman` or `curl` to read, create, update and delete users following the standard REST API conventions.
 5. Run the unit tests (does not require server to be started) with: `gradle clean test` or `gradle clean test --info`
 
-## Whats new in Spring 5
-
-Spring 5 adds a plenty of new features. Following are my favourits:
-- Reactive Programming Model
-- Spring Web Flux
-- Reactive DB repositories & integrations + hot event streaming: MongoDB, CouchDB, Redis, Cassandra, Kafka
-- Testing improvements – WebTestClient (based on reactive WebFlux WebClient)
-- JDK 8+ and Java EE 7+ baseline - see the `reactive-quotes` demo for Java 9 example
-- Kotlin functional DSL
