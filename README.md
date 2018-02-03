@@ -11,7 +11,7 @@ You can find links to the presentation in [this post](https://www.slideshare.net
 ## reactive-streaming-demos
 
 1. Run the main application class `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
-2. Open `http://localhost:9000/` in your browser.
+2. Open `[http://localhost:9000/](http://localhost:9000/)` in your browser.
 
 ## Whats new in Spring 5
 
