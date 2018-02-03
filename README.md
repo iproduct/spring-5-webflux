@@ -27,6 +27,17 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 2. Build and run the Spring Boot-Gradle application (`reactive-streaming-demos` module) - e.g. run `gradle bootRun` from the `reactive-streaming-demos` folder. The application main class is `org.iproduct.demos.spring.streamingdemos.ReactiveStreamingDemosApp`.
 3. Open [http://localhost:9000/](http://localhost:9000/) for Java Processes CPU Profiling demo (using novelties in Java 9 Process API:  `ProcessHandle` and `ProcessInfo` classes), and [http://localhost:9000/quotes.html](http://localhost:9000/quotes.html) for Reactive Option Quotes demo respectively in your browser.
 
+
+#### Streaming demo REST and SSE endpoints
+Provides information about runiiing Java processes and streaming data about their CPU ussage. Second demo provides streaming data about **fictional** options quote prices. **All data is purely fictional - NO real stock prices are quoteed :)**:
+
+Method	| Path	| Description	| JSON | SSE Streaming
+------------- | ------------------------- | ------------- |:-------------:|:-------------:|
+GET	| /api/processes	| List all currently running Java processes	   |  	*  |  
+SSE	| /api/cpu	| Get realtime stream of CPU consumption for all Java processes |   * |  *
+SSE	| /api/quotes	| Get realtime stream of CPU consumption for all Java processes |   * |  *
+
+
 ### webflux-users (requires Java 8)
 
 1. Be sure to configure `JAVA_HOME` environment variable to point to **JDK 8**, and `PATH` to include `bin` sub-folder of **JDK 8** (for Windows). For Linux use something like `sudo  update-java-alternatives --list` and `sudo  update-java-alternatives --set [JDK/JRE name e.g. java-8-oracle]` to choose the **java 8**.
@@ -38,7 +49,7 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 
 
 #### Users service
-Provides CRUD operations for the users:
+Provides CRUD operations for the **Users**:
 
 Method	| Path	| Description	| User authenticated | Admin only
 ------------- | ------------------------- | ------------- |:-------------:|:-------------:|
