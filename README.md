@@ -38,12 +38,12 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 
 
 #### Users service
-Provides CRUD operations for users.
+Provides CRUD operations for the users:
 
-Method	| Path	| Description	| User authenticated	
-------------- | ------------------------- | ------------- |:-------------:|
-GET	| /statistics/{account}	| Get specified account statistics	          |  	
-GET	| /statistics/current	| Get current account statistics	| × 
-POST	| /statistics/demo	| Get demo account statistics	|   
-PUT	| /statistics/{account}	| Create or update time series datapoint for specified account	|  
-DELETE | /statistics/{account}	| Create or update time series datapoint for specified account	|  
+Method	| Path	| Description	| User authenticated | Admin only
+------------- | ------------------------- | ------------- |:-------------:|:-------------:|
+GET	| /api/users	| List all users	          |  	*  |  
+GET	| /api/users/{userId}	| Get current account statistics	|    |  
+POST	| /api/users	| Create new user	|  *  |  
+PUT	| /api/users/{userId}	| Create or update time series datapoint for specified account	|  *  |  
+DELETE | /api/users/{userId}	| Create or update time series datapoint for specified account	|  *  |  * 
