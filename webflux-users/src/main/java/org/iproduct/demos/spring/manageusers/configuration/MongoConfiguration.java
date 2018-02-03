@@ -38,9 +38,9 @@ import java.util.concurrent.TimeUnit;
 @EnableReactiveMongoRepositories(basePackageClasses = UserRepository.class)
 @Slf4j
 public class MongoConfiguration extends AbstractReactiveMongoConfiguration implements ApplicationContextAware{ // extends AbstractMongoConfiguration {
-    private static final User defaultAdmin = new User(null, "admin",
+    private static final User defaultAdmin = new User("admin",
             "{bcrypt}$2a$10$y3WZ2gUVsYkgTurMIIDQueSKtEI3nQtUl6Y4VH3vk0izY8gFcfexe",
-            "Default", "Admin", Role.ADMIN, true);
+            "Default", "Admin", Role.ADMIN);
 
     @Value("${mongo.server.selection.timeout.ms:15000}")
     private long serverSelectionTimeout;

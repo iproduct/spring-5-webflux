@@ -67,6 +67,14 @@ public class User implements UserDetails {
         role = Role.CUSTOMER;
     }
 
+    public User(String username, String password, String fname, String lname, Role role) {
+        this.username = username;
+        this.password = password;
+        this.fname = fname;
+        this.lname = lname;
+        this.role = role;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return AuthorityUtils.createAuthorityList(getRole() != null ? getRole().toString() : Role.CUSTOMER.toString());

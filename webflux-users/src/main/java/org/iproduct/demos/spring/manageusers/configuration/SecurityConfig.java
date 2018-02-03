@@ -20,6 +20,7 @@ public class SecurityConfig {
             .authorizeExchange()
                 .pathMatchers(HttpMethod.GET, "/api/users").authenticated()
                 .pathMatchers(HttpMethod.POST, "/api/users/**").authenticated()
+                .pathMatchers(HttpMethod.PUT, "/api/users/**").authenticated()
                 .pathMatchers(HttpMethod.DELETE, "/api/users/**").hasAuthority("ADMIN")
                 //.pathMatchers("/api/users/{user}/**").access(this::currentUserMatchesPath)
                 .anyExchange().permitAll()
