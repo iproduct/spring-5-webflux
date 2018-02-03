@@ -14,5 +14,5 @@ Spring 5 adds a plenty of new features. Following are my favourits:
 -
 - Reactive DB repositories & integrations + hot event streaming: MongoDB, CouchDB, Redis, Cassandra, Kafka
 - Testing improvements – WebTestClient (based on reactive WebFlux WebClient)
-- JDK 8+ and Java EE 7+ baseline - see the 'reactive quotes' demo for Java 9 example
+- JDK 8+ and Java EE 7+ baseline - see the `reactive-quotes` demo for Java 9 example
 - Kotlin functional DSL
