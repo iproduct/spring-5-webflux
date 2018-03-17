@@ -36,7 +36,8 @@ public class UserHandler {
 
     public Mono<ServerResponse> findAllUsers(ServerRequest request) {
         return ok().contentType(APPLICATION_JSON)
-                .body(userRepo.findAll(), User.class);  // .body(Flux.fromIterable(userRepo.findAll()), User.class);
+                .body(userRepo.findAll()
+                    .map(user -> { user.setPassword("********"); return user; }), User.class);  // .body(Flux.fromIterable(userRepo.findAll()), User.class);
     }
 
     public Mono<ServerResponse> findUser(ServerRequest request) {
@@ -45,6 +46,7 @@ public class UserHandler {
 
         Mono<ServerResponse> notFound = ServerResponse.notFound().build();
         return userRepo.findById(userId)
+                .map(user -> { user.setPassword("********"); return user; })
                 .flatMap(user -> ok()
                         .contentType(APPLICATION_JSON)
                         .body(fromObject(user)))
@@ -79,6 +81,7 @@ public class UserHandler {
 //                .log()
                 .flatMap(createdUser -> {
                     log.debug("New user saved: " + createdUser);
+                    createdUser.setPassword("********");
                     return created(
                             URI.create(request.path() + "/" + createdUser.getId()))
                             .contentType(APPLICATION_JSON)
@@ -117,7 +120,10 @@ public class UserHandler {
                     return userRepo.save(resultUser);
                 })
                 .log()
-                .flatMap(editedUser -> ok().contentType(APPLICATION_JSON).syncBody(editedUser))
+                .flatMap(editedUser -> {
+                    editedUser.setPassword("********");
+                    return ok().contentType(APPLICATION_JSON).syncBody(editedUser);
+                })
                 .switchIfEmpty(
                         badRequest()
                                 .syncBody("Error: User does not exist and can not be edited."));

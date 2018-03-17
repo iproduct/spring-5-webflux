@@ -15,7 +15,7 @@ import java.util.Collection;
 //import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
-@JsonIgnoreProperties(value = {"password", "authorities", "name",
+@JsonIgnoreProperties(value = {"authorities", "name",
         "accountNonExpired", "accountNonLocked", "credentialsNonExpired", "enabled"})
 @Getter
 @Setter

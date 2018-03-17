@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
-@Configuration("org.iproduct.demos.spring.hellowebflux")
+@Configuration("org.iproduct.demos.spring.manageusers")
 @EnableWebFluxSecurity
 public class SecurityConfig {
 

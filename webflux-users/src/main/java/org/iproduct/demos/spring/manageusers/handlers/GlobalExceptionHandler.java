@@ -2,7 +2,7 @@ package org.iproduct.demos.spring.manageusers.handlers;
 
 import org.iproduct.demos.spring.manageusers.exceptions.CustomValidationException;
 import org.iproduct.demos.spring.manageusers.exceptions.UserDataException;
-import org.springframework.boot.autoconfigure.web.reactive.error.ErrorWebExceptionHandler;
+import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.http.codec.HttpMessageWriter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.HandlerStrategies;
