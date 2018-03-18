@@ -1,6 +1,8 @@
 package org.iproduct.demos.spring.manageusers.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
@@ -75,6 +77,16 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+    @JsonIgnore
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonProperty
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return AuthorityUtils.createAuthorityList(getRole() != null ? getRole().toString() : Role.CUSTOMER.toString());
@@ -117,13 +129,6 @@ public class User implements UserDetails {
 //        this.email = email;
 //    }
 //
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
 //
 //    public String getFname() {
 //        return fname;
